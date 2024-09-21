@@ -3,11 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Logout } from "@/icons"
 import { MenuIcon } from "lucide-react"
 import Link from "next/link"
-import React from "react"
 import Menu from "./menu"
-type Props = {
-  children: React.ReactNode
-}
 
 const LandingPageNavbar = () => {
   return (

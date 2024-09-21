@@ -9,6 +9,8 @@ import { SwiperProps, SwiperSlide } from "swiper/react"
 import { Slider } from "../slider"
 import { GroupListItem } from "./list-item"
 
+import { usePathname } from "next/navigation"
+
 type Props = {
   overlay?: boolean
   label?: string
@@ -25,6 +27,7 @@ export const GroupListSlider = ({
   route,
   ...rest
 }: Props) => {
+  const pathname = usePathname().split("/").filter(Boolean).pop()
   return (
     <Slider
       slidesPerView={"auto"}
@@ -40,7 +43,11 @@ export const GroupListSlider = ({
           {!register ? (
             route ? (
               <Link href={`/explore/${item.path}`}>
-                <GroupListItem {...item} selected={selected} />
+                <GroupListItem
+                  {...item}
+                  selected={selected || pathname}
+                  path={item.path}
+                />
               </Link>
             ) : (
               <GroupListItem {...item} />
@@ -56,7 +63,11 @@ export const GroupListSlider = ({
                     value={item.path}
                     {...register("category")}
                   />
-                  <GroupListItem {...item} selected={selected} />
+                  <GroupListItem
+                    {...item}
+                    selected={selected || pathname}
+                    path={item.path}
+                  />
                 </span>
               </Label>
             )

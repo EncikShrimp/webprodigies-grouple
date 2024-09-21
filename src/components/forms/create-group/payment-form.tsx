@@ -7,6 +7,7 @@ import { ErrorMessage } from "@hookform/error-message"
 import { CardElement } from "@stripe/react-stripe-js"
 import dynamic from "next/dynamic"
 import Link from "next/link"
+import { useState } from "react"
 import "swiper/css/bundle"
 
 type Props = {
@@ -33,11 +34,12 @@ const PaymentForm = ({ userId, affiliate, stripeId }: Props) => {
     creatingIntent,
   } = usePayments(userId, affiliate)
 
+
   return (
     <Loader loading={creatingIntent}>
       <form className="pt-5" onSubmit={onCreateGroup}>
         <GroupList
-          selected={isCategory}
+          selected={isCategory }
           register={register}
           label="Select Category"
           slidesOffsetBefore={28}

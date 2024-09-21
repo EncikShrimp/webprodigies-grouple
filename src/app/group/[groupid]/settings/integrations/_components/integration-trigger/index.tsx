@@ -43,7 +43,7 @@ const IntegrationTrigger = ({
         {[
           "Payment and bank information",
           "Products and services you sell",
-          "Business and tax information",
+          "Buisness and tax information",
           "Create and update Products",
         ].map((item, key) => (
           <div key={key} className="flex gap-2 items-center pl-3">

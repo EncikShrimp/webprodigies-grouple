@@ -1,6 +1,6 @@
-const GroupLoading = () => {
+const ExporeCategoryLoading = () => {
   return (
-    <div className="h-96 w-full flex justify-center items-center">
+    <div className="mt-36 w-full flex justify-center items-center">
       <div role="status">
         <svg
           aria-hidden="true"
@@ -24,4 +24,4 @@ const GroupLoading = () => {
   )
 }
 
-export default GroupLoading
+export default ExporeCategoryLoading

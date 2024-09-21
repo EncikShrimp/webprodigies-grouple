@@ -1,19 +1,22 @@
 import { onAuthenticatedUser } from "@/actions/auth"
 import BackdropGradient from "@/components/global/backdrop-gradient"
 import GradientText from "@/components/global/gradient-text"
-
 import { GroupListSlider } from "@/components/global/group-list-slider"
 import Search from "@/components/global/search"
 
 import Link from "next/link"
 import React from "react"
 
-const ExploreLayout = async ({ children }: { children: React.ReactNode }) => {
+type Props = {
+  children: React.ReactNode
+}
+
+const ExploreLayout = async ({ children }: Props) => {
   const user = await onAuthenticatedUser()
+
   return (
     <div className="flex-1 flex flex-col">
       <div className="flex flex-col items-center mt-36 px-10">
-        {console.log(user) as any}
         <GradientText
           className="text-[90px] font-semibold leading-none"
           element="H2"
@@ -24,7 +27,7 @@ const ExploreLayout = async ({ children }: { children: React.ReactNode }) => {
           or{" "}
           <Link
             href={user.status === 200 ? `/group/create` : "/sign-in"}
-            className="underline"
+            className="underline hover:brightness-200"
           >
             create your own
           </Link>

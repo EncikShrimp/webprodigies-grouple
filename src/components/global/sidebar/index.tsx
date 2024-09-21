@@ -83,7 +83,7 @@ const SideBar = ({ groupid, userid, mobile }: Props) => {
                   alt="icon"
                   className="w-10 rounded-lg"
                 />
-                <p className="text-sm">{groupInfo.group?.name}</p>
+                <p className="text-sm truncate">{groupInfo.group?.name}</p>
               </div>
               <span className="">
                 <CarotSort />

@@ -24,7 +24,7 @@ const Menu = ({ orientation }: Props) => {
                   onClick: () => onSetSection(menuItem.path),
                 })}
                 className={cn(
-                  "rounded-xl flex gap-2 py-2 px-4 items-center",
+                  "rounded-xl flex gap-2 py-2 px-4 items-center hover:backdrop-brightness-200",
                   section == menuItem.path
                     ? "bg-[#09090B] border-[#27272A]"
                     : "",

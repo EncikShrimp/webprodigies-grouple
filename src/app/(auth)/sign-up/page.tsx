@@ -1,6 +1,7 @@
 import SignUpForm from "@/components/forms/sign-up"
 import { GoogleAuthButton } from "@/components/global/google-oauth-button"
 import { Separator } from "@/components/ui/separator"
+import Link from "next/link"
 
 type Props = {}
 
@@ -20,6 +21,12 @@ const SignUpPage = (props: Props) => {
         <Separator orientation="horizontal" className="bg-themeGray" />
       </div>
       <GoogleAuthButton method="signup" />
+      <div className="w-full flex items-center justify-center my-10 ">
+        <p>Already on Grouple?</p>
+        <Link href="/sign-in" className="underline ml-2 hover:brightness-75 ">
+          Sign In
+        </Link>
+      </div>
     </>
   )
 }

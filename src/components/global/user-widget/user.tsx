@@ -42,9 +42,14 @@ export const UserAvatar = ({ image, groupid, userid }: UserWidgetProps) => {
         </Avatar>
       }
     >
-      <Link href={`/group/${groupid}/settings`} className="flex gap-x-2 px-2">
-        <Settings /> Settings
-      </Link>
+      <Button
+        variant="ghost"
+        className="flex gap-x-3 px-2 justify-start w-full"
+      >
+        <Link href={`/group/${groupid}/settings`} className="flex gap-x-2">
+          <Settings /> Settings
+        </Link>
+      </Button>
       <Button
         onClick={onLogout}
         variant="ghost"

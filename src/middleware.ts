@@ -8,6 +8,11 @@ export default clerkMiddleware(async (auth, req) => {
   const host = req.headers.get("host")
   const reqPath = req.nextUrl.pathname
   const origin = req.nextUrl.origin
+
+  // Create a new Headers object and set the custom header
+  const headers = new Headers(req.headers)
+  headers.set("x-current-path", reqPath)
+
   if (isProtectedRoute(req)) auth().protect()
   if (!baseHost.includes(host as string) && reqPath.includes("/group")) {
     const response = await fetch(`${origin}/api/domain?host=${host}`, {
@@ -21,9 +26,12 @@ export default clerkMiddleware(async (auth, req) => {
     if (data.status === 200 && data) {
       return NextResponse.rewrite(
         new URL(reqPath, `https://${data.domain}/${reqPath}`),
+        { headers },
       )
     }
   }
+
+  return NextResponse.next({ headers })
 })
 
 export const config = {

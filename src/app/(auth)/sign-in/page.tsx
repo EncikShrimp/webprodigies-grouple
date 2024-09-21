@@ -3,6 +3,7 @@
 import SignInForm from "@/components/forms/sign-in"
 import { GoogleAuthButton } from "@/components/global/google-oauth-button"
 import { Separator } from "@/components/ui/separator"
+import Link from "next/link"
 // WIP: callback
 
 const SignInPage = () => {
@@ -21,6 +22,12 @@ const SignInPage = () => {
         <Separator orientation="horizontal" className="bg-themeGray" />
       </div>
       <GoogleAuthButton method="signin" />
+      <div className="w-full flex items-center justify-center my-10 ">
+        <p>New to Grouple?</p>
+        <Link href="/sign-up" className="underline ml-2 hover:brightness-75 ">
+          Join Now
+        </Link>
+      </div>
     </>
   )
 }

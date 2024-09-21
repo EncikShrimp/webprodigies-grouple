@@ -19,7 +19,9 @@ export const Navbar = async () => {
         {user.status === 200 ? (
           <GroupDropDown members={groups.members} groups={groups} />
         ) : (
-          <p>Grouple.</p>
+          <Link href="/" className="hover:brightness-90">
+            Grouple.
+          </Link>
         )}
       </div>
       <GlassSheet

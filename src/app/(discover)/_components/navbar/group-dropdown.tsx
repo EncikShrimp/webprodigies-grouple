@@ -61,7 +61,7 @@ export const GroupDropDown = ({ groups, members }: GroupDropDownProps) => {
           >
             <Button
               variant="ghost"
-              className="flex gap-2 w-full justify-start hover:bg-themeGray items-center"
+              className="flex gap-2 w-full justify-start hover:bg-themeGray items-center truncate"
             >
               <Group />
               {item.name}
@@ -78,7 +78,7 @@ export const GroupDropDown = ({ groups, members }: GroupDropDownProps) => {
           >
             <Button
               variant="ghost"
-              className="flex gap-2 w-full justify-start hover:bg-themeGray items-center"
+              className="flex gap-2 w-full justify-start hover:bg-themeGray items-center truncate"
             >
               <Group />
               {member.Group?.name}
