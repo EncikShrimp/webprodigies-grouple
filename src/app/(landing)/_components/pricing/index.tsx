@@ -27,7 +27,7 @@ export const PricingSection = (props: Props) => {
         <div className="flex flex-col gap-2">
           <CardTitle>99/m</CardTitle>
           <CardDescription className="text-[#B4B0AE]">
-            Great if you're just getting started
+            Great if you&apos;re just getting started
           </CardDescription>
           <Link href="#" className="w-full mt-3">
             <Button

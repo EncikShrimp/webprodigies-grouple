@@ -34,8 +34,8 @@ export async function GET(req: NextRequest) {
       if (integrateStripeAccount) {
         const accountLink = await stripe.accountLinks.create({
           account: account.id,
-          refresh_url: `http://localhost:3000/callback/stripe/refresh`,
-          return_url: `http://localhost:3000/group/${groupid}/settings/integrations`,
+          refresh_url: `http://${process.env.BASE_HOST}/callback/stripe/refresh`,
+          return_url: `http://${process.env.BASE_HOST}/group/${groupid}/settings/integrations`,
           type: "account_onboarding",
         })
         console.log(accountLink)
